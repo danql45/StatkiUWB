@@ -10,6 +10,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.VideoView;
 
@@ -105,7 +106,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.b1:
                 Log.d(TAG, "onClick: b1");
-                Intent intent = new Intent(ctx, MainActivity2.class);
+                Intent intent = new Intent(ctx, Activity2.class);
                 intent.putExtra("doPrzekazania",1);
                 intent.putExtra("doPrzekazaniaString","String");
                 startActivity(intent);
@@ -119,4 +120,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
     }
+
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        //This is used to hide/show 'Status Bar' & 'System Bar'. Swip bar to get it as visible.
+        View decorView = getWindow().getDecorView();
+        if (hasFocus) {
+            decorView.setSystemUiVisibility(
+                    View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                            | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                            | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                            | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                            | View.SYSTEM_UI_FLAG_FULLSCREEN
+                            | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+        }
+    }
+
 }
