@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">StatkiUWB</string>
+    <string name="b1Text">Start</string>
+    <string name="b2Text">Wyjście</string>
+    <string name="main_page_string">STATKI</string>
+    <string name="app_logo">App Logo</string>
+</resources>
