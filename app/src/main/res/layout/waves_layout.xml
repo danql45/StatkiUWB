@@ -84,7 +84,7 @@
 <!--        app:layout_constraintTop_toBottomOf="@+id/b1"-->
 <!--        app:layout_constraintVertical_bias="0.0" />-->
 
-    <com.example.statkiuwb.components.BoardComponent
+    <com.example.statkiuwb.components.board.BoardComponent
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
