@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@id/guideline"
-        app:layout_constraintGuide_percent="0.33"/>
+        app:layout_constraintGuide_percent="0.33" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineVertical2"
@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@id/guideline"
-        app:layout_constraintGuide_percent="0.66"/>
+        app:layout_constraintGuide_percent="0.66" />
 
 
     <androidx.constraintlayout.widget.Guideline
@@ -29,13 +29,67 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="5dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.3"/>
+        app:layout_constraintGuide_percent="0.3" />
 
 
     <com.example.statkiuwb.components.board.BoardComponent
         android:id="@+id/boardLayoutSetBoardActivity"
-        app:layout_constraintTop_toBottomOf="@+id/guideline"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/guideline" />
+
+
+    <com.example.statkiuwb.components.ships.SingularShip
+        android:id="@+id/singularShip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/guideline"
+        app:layout_constraintEnd_toEndOf="@+id/guidelineVertical1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <com.example.statkiuwb.components.ships.DoubleShip
+        android:id="@+id/doubleShipHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintVertical_bias="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.example.statkiuwb.components.ships.DoubleShip
+        android:id="@+id/doubleShipVertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/guideline"
+        app:layout_constraintStart_toStartOf="@id/guidelineVertical1"
+        app:layout_constraintVertical_bias="0.4"
+        app:layout_constraintEnd_toEndOf="@id/guidelineVertical2"
+        app:layout_constraintTop_toBottomOf="@+id/doubleShipHorizontal" />
+
+
+    <com.example.statkiuwb.components.ships.TripleShip
+        android:id="@+id/tripleShipHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintVertical_bias="0.1"
+        app:layout_constraintStart_toStartOf="@id/guidelineVertical2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.example.statkiuwb.components.ships.TripleShip
+        android:id="@+id/tripleShipVertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/guideline"
+        app:layout_constraintVertical_bias="0.4"
+        app:layout_constraintStart_toStartOf="@id/tripleShipHorizontal"
+        app:layout_constraintTop_toBottomOf="@+id/tripleShipHorizontal" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
