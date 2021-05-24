@@ -45,8 +45,11 @@ public class BoardComponent extends ConstraintLayout implements View.OnTouchList
         board.setLayoutParams(params);
         board.setOnTouchListener(this);
 
-        board.post(() -> setBars());
+    }
 
+    public void drawBoard(int amountOfBars){
+        this.amountOfSquaresInRow = amountOfBars;
+        board.post(() -> setBars());
     }
 
     private void setBars() {
@@ -102,7 +105,7 @@ public class BoardComponent extends ConstraintLayout implements View.OnTouchList
     public boolean onTouch(View v, MotionEvent event) {
 
         //czy jest to event puszczonego palca czyli ktos cos wcisnal
-        if(event.getAction() == MotionEvent.ACTION_DOWN){
+        if(event.getAction() == MotionEvent.ACTION_UP){
 
             switch(v.getId()){
 
@@ -113,7 +116,7 @@ public class BoardComponent extends ConstraintLayout implements View.OnTouchList
         }
 
         //zwraca flage p/f czy ten event zostal wykonany - czyli jak false to poleci ten event dalej wglab drzewa layoutu
-        return false;
+        return true;
     }
 
     private void performCLickOnGrid(MotionEvent event) {
